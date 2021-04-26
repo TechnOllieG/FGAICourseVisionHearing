@@ -18,7 +18,7 @@ public:
 	virtual void BeginPlay() override;
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
-	void MakeSound(const FSoundSensingData& SoundSensingData);
+	void HandleSound(const FSoundSensingData& SoundSensingData);
 
 	UFUNCTION(BlueprintImplementableEvent)
 	void OnHearSound(const FSoundSensingData& SoundData);

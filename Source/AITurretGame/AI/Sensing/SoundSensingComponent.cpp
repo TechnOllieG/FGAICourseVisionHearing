@@ -24,7 +24,7 @@ void USoundSensingComponent::TickComponent(float DeltaTime, ELevelTick TickType,
 		UKismetSystemLibrary::DrawDebugSphere(this, GetOwner()->GetActorLocation(), MaxRangeRadius, 12, FLinearColor::Red);
 }
 
-void USoundSensingComponent::MakeSound(const FSoundSensingData& SoundSensingData)
+void USoundSensingComponent::HandleSound(const FSoundSensingData& SoundSensingData)
 {
 	float NormalizedDistanceToSound = UKismetMathLibrary::NormalizeToRange((SoundSensingData.TargetActor->GetActorLocation() - GetOwner()->GetActorLocation()).SizeSquared(), 0.f, FMath::Square(MaxRangeRadius));
 	

@@ -20,6 +20,6 @@ void USoundTargetComponent::PlaySound(float Loudness)
 	
 	for(USoundSensingComponent* Component : Components)
 	{
-		Component->MakeSound(Data);
+		Component->HandleSound(Data);
 	}
 }
