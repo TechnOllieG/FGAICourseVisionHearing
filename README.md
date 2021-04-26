@@ -15,7 +15,7 @@ I also wanted to start on the fps-game immediately since my designer was ready t
 
 <strong>Short explanation (optional to read ofc)</strong>
 
-In AITurretGameInstance there is a TSet of UVisionTargetComponent's, these are checked in each VisionSensingComponent in Tick if they are in the sensing components owner's line of sight and if they are obstructed by anything. The obstruction detection is done in four linetrace's. One linetrace to the center of the target's shape component, two to each sides edges of the shape component (as seen from the sensing component's owner's perspective) and one to the top edge of the shape component.
+In AITurretGameInstance there is a TSet of UVisionTargetComponent's, these are checked in each VisionSensingComponent in Tick if they are in the sensing components owner's line of sight and if they are obstructed by anything. The obstruction detection is done in four linetrace's. One linetrace to the center of the target's shape component, two to each sides edges of the shape component (as seen from the sensing component's owner's perspective) and one to the top edge of the shape component. These extra linetraces were done in order to be able to see the target if it was only partially obstructed.
 
 If a target is sensed, the target is added to a set and the OnFindVisionTarget delegate is called, and when it is lost OnLooseVisionTarget is called and it is removed from the set. There is also a callable function that checks if a target is currently seen.
 
